@@ -7,10 +7,10 @@
 3.- Abrir una consola y ejecutar (dentro de LUCENE_HOME):
 ```
 > set LUCENE_HOME=(DIRECTORIO DONDE DESCOMPRIMIÓ LUCENE)
-> set CLASSPATH=%LUCENE_HOME%\core\lucene-core-{version}.jar;%LUCENE_HOME%\core\lucene-queryparser-{version}.jar;%LUCENE_HOME%\core\lucene-analyzers-common-{version}.jar:%LUCENE_HOME%\core\lucene-demo-{version}.jar;.
+> set export CLASSPATH=%LUCENE_HOME%\core\lucene-core-5.3.1.jar;%LUCENE_HOME%\analysis\common\lucene-analyzers-common-5.3.1.jar;%LUCENE_HOME%\queryparser\lucene-queryparser-5.3.1.jar;%LUCENE_HOME%\demo\lucene-demo-5.3.1.jar:.
 ```
 
-NOTA: Debe cambiar la variable {version} por su valor correspondiente
+NOTA: Debe cambiar la variable `5.3.1` por su versión
 
 4.- Para indexar:
 ```
