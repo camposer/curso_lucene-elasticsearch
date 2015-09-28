@@ -14,10 +14,10 @@ NOTA: Debe cambiar la variable `5.3.1` por su versión
 
 4.- Para indexar:
 ```
-> java org.apache.lucene.demo.IndexFiles -docs materiales\data
+> java org.apache.lucene.demo.IndexFiles -docs materiales\data1
 ```
 
-La carpeta `materiales\data` puede hallarla en el repositorio
+La carpeta `materiales\data1` puede hallarla en el repositorio
 
 5.- Para buscar:
 ```
