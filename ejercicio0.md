@@ -7,19 +7,19 @@
 3.- Abrir una consola y ejecutar (dentro de LUCENE_HOME):
 ```
 > set LUCENE_HOME=(DIRECTORIO DONDE DESCOMPRIMIÓ LUCENE)
-> set CLASSPATH=%LUCENE_HOME%\core\lucene-core-{version}.jar;%LUCENE_HOME%\core\lucene-queryparser-{version}.jar;%LUCENE_HOME%\core\lucene-analyzers-common-{version}.jar:.
+> set CLASSPATH=%LUCENE_HOME%\core\lucene-core-{version}.jar;%LUCENE_HOME%\core\lucene-queryparser-{version}.jar;%LUCENE_HOME%\core\lucene-analyzers-common-{version}.jar:%LUCENE_HOME%\core\lucene-demo-{version}.jar;.
 ```
 
 NOTA: Debe cambiar la variable {version} por su valor correspondiente
 
 4.- Para indexar:
 ```
-> java -jar %LUCENE_HOME%\lucene-demo-{version}.jar org.apache.lucene.demo.IndexFiles -docs misc\data
+> java org.apache.lucene.demo.IndexFiles -docs misc\data
 ```
 
-La carpeta misc\data puede hallarla en el repositorio
+La carpeta `misc\data` puede hallarla en el repositorio
 
 5.- Para buscar:
 ```
-> java -jar %LUCENE_HOME%\lucene-demo-{version}.jar org.apache.lucene.demo.SearchFiles
+> java org.apache.lucene.demo.SearchFiles
 ```
