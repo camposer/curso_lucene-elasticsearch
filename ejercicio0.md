@@ -10,6 +10,8 @@
 > set CLASSPATH=%LUCENE_HOME%\core\lucene-core-{version}.jar;%LUCENE_HOME%\core\lucene-queryparser-{version}.jar;%LUCENE_HOME%\core\lucene-analyzers-common-{version}.jar:.
 ```
 
+NOTA: Debe cambiar la variable {version} por su valor correspondiente
+
 4.- Para indexar:
 ```
 > java -jar %LUCENE_HOME%\lucene-demo-{version}.jar org.apache.lucene.demo.IndexFiles -docs misc\data
