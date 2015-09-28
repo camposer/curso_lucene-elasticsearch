@@ -1,0 +1,25 @@
+#Cómo configurar proxy para Maven en Eclipse
+
+1.- Abrir eclipse
+
+2.- Ir a Window -> Preferences -> Maven -> User settings
+
+3.- Añadir el fichero settings.xml con el siguiente contenido:
+```
+<settings>
+	<proxies>
+		<proxy>
+			<id>example-proxy</id>
+			<active>true</active>
+			<protocol>http</protocol>
+			<host>proxy.company.com</host>
+			<port>8080</port>
+			<username>USUARIO</username>
+			<password>CONTRASEÑA</password>
+		</proxy>
+	</proxies>
+</settings>
+```
+
+4.- Hacer clic en Update
+
