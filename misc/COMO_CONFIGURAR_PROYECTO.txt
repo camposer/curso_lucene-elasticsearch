@@ -1,0 +1,12 @@
+#Cómo configurar proyecto
+
+1.- Abrir Eclipse
+
+2.- File -> New -> Java Project
+
+3.- Clic derecho sobre el proyecto y seleccionar: Configure -> Convert to Maven Project
+
+4.- Dentro del proyecto debería crear un fichero pom.xml. Clic derecho sobre el fichero -> Run As -> Maven install 
+- Esto debería descargar todas las dependencias de Maven, en caso de que el proxy esté mal configurado dará error
+
+5.- Clic derecho sobre el proyecto -> Maven -> Update Project (activar Force xxx)
