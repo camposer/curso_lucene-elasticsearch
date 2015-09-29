@@ -22,9 +22,14 @@
 - Elasticsearch
 	- https://www.elastic.co/
 	- https://www.elastic.co/guide/index.html
+	- https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html
 	
 ##Recursos
 
+- Lucene Standard Analyzer vs Snowball
+	- http://stackoverflow.com/questions/3875382/lucene-standard-analyzer-vs-snowball
+- Lucene: Analyzers, stemming y búsqueda de documentos similares
+	- http://www.adictosaltrabajo.com/tutoriales/lucene-ana-lyzers-stemming-more-like-this/
 - Lucene's near-real-time search is fast!
 	- http://blog.mikemccandless.com/2011/06/lucenes-near-real-time-search-is-fast.html
 - Simon says: optimize is bad for you...
