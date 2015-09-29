@@ -23,6 +23,11 @@
 	- https://www.elastic.co/
 	- https://www.elastic.co/guide/index.html
 	- https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html
+- ElasticsearchJS
+	- https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html
+- Spring Data Elasticsearch
+	- http://projects.spring.io/spring-data/
+	- http://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/
 	
 ##Recursos
 
