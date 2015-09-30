@@ -1,6 +1,9 @@
 package config;
 
-import org.elasticsearch.node.NodeBuilder;
+import org.elasticsearch.client.Client;
+import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.common.transport.TransportAddress;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
@@ -12,7 +15,14 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 public class ElasticsearchConfig {
     @Bean
     public ElasticsearchOperations elasticsearchTemplate() {
-        return new ElasticsearchTemplate(NodeBuilder.nodeBuilder()
-        		.local(true).node().client());
+    return new ElasticsearchTemplate(client());
+     }
+
+    @Bean
+    public Client client(){
+        TransportClient client= new TransportClient();
+        TransportAddress address = new InetSocketTransportAddress("localhost", 9300); 
+        client.addTransportAddress(address);
+        return client;
     }
 }
