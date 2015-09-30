@@ -57,4 +57,10 @@ public class Libro {
 	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
+
+	@Override
+	public String toString() {
+		return "Libro [id=" + id + ", nombre=" + nombre + ", fecha=" + fecha + ", tipo="
+				+ tipo + "]";
+	}
 }

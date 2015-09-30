@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +64,6 @@ public class LibroRepositoryTest {
 	}
 
 	@Test
-	@Ignore
 	public void findText() {
 		Libro libro = new Libro();
 		libro.setNombre("nuevonombre");
@@ -75,8 +73,11 @@ public class LibroRepositoryTest {
 		
 		libro = libroRepository.save(libro); // Indexando el libro
 		
-		int size = libroRepository.findText("nuevonombre").size();
+		List<Libro> libros = libroRepository.findText("+nombre:nombre -contenido:contenido");
+		int size = libros.size();
+		
 		Assert.assertTrue(size > 0);
+		System.out.println(libros.get(0).getContenido());
 	}
 
 	@Test 
@@ -84,6 +85,7 @@ public class LibroRepositoryTest {
 		List<Libro> libros = libroRepository.findAlgo();
 		Assert.assertTrue(libros.size() == 1);
 	}
+	
 }
 
 
