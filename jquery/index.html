@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="jquery-1.11.3.js"></script>
+		<script src="elasticsearch.jquery.js"></script>
+		<script>
+			var client = new $.es.Client({
+			  hosts: 'localhost:9200'
+			});
+
+			// TODO: Refactorizar con JSRender o similar
+			var imprimirResultado = function(hits) {
+				var html = "<table><tr>" +
+					"<th>Id</th>" +
+					"<th>Nombre</th>" +
+					"<th>Fecha</th>"  +
+					"<th>Tipo</th>";
+					
+				var resultado = $("#resultado");
+				for (var i in hits) {
+					var id = hits[i]._id;
+					var e = hits[i]._source;
+					
+					html += "<tr>" +
+							"<td>" + id + "</td>" +
+							"<td>" + e.nombre + "</td>" +
+							"<td>" + e.fecha + "</td>" +
+							"<td>" + e.tipo + "</td>" +
+						"</tr>";						
+				}
+				
+				html += "</table>";
+				$("#resultado").html(html);
+			}
+			
+			var buscar = function(query) {
+				client.search({
+					index : 'libreria',
+					type : 'libros',
+					body : {
+						query : {
+							query_string : {
+								default_field : 'contenido',
+								query : query
+							}
+						}
+					}
+				}).then(function(resp) {
+					var hits = resp.hits.hits;
+					imprimirResultado(hits);
+				}, function(err) {
+					console.trace(err.message);
+				});				
+			}
+			
+			$(document).ready(function() {
+				$("#btnBusqueda").click(function() {
+					var query = $("#query").val();
+					buscar(query);
+				})
+			})
+		</script>
+		<style>
+			body {
+				text-align: center;
+			}
+			div table {
+				margin-right: auto;
+				margin-left: auto;
+			}
+		</style>
+	</head>
+	<body>
+		Búsqueda: 
+		<input type="text" id="query"/><br/>
+		<input type="button" id="btnBusqueda" value="Búsqueda"/><br/>
+		<div id="resultado">
+			Aquí van los resultados
+		</div>
+	</body>
+</html>

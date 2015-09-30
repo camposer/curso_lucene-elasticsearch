@@ -12,6 +12,6 @@ public interface LibroRepository
 		LibroRepositoryCustom {
 
 	List<Libro> findByNombre(String nombre);
-	@Query("query_string : { default_field : 'nombre', query : ?1 }}")
+	@Query("{\"query\":{\"query_string\":{\"default_field\":\"contenido\",\"query\":?1}}}")
 	List<Libro> findText(String text);
 }
