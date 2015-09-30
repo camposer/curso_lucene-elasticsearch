@@ -26,7 +26,7 @@
 - ElasticsearchJS
 	- https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html
 - Spring Data Elasticsearch
-	- http://projects.spring.io/spring-data/
+	- https://github.com/spring-projects/spring-data-elasticsearch
 	- http://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/
 	
 ##Recursos

@@ -33,6 +33,8 @@ public class Indexador {
 	}
 
 	public Indexador() throws Exception {
+		System.out.println("Indexando...");
+
 		Long inicio = new Date().getTime();
 		inicializar();
 		indexar();
@@ -43,8 +45,6 @@ public class Indexador {
 	}
 	
 	private void inicializar() throws Exception {
-		System.out.println("Indexando...");
-
 		FSDirectory.open(new File(INDICES).toPath());
 
 		config = new IndexWriterConfig(new SpanishAnalyzer());
